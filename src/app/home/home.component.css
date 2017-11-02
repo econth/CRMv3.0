@@ -1,0 +1,12 @@
+.navbar-nav{
+    flex-direction: row;
+}
+
+.navbar-collapse {
+    flex-basis: 90%;
+}
+
+ul li{
+    margin-right: 15px;
+}
+
