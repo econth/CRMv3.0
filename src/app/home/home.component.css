@@ -1,21 +1,28 @@
 nav.sidebar{
     margin-top: 57px;
-    padding-top: 17px;
-    width: 219px;
+    width: 256px;
 }
 main{
     margin-top: 57px;
+    width: 100%
 }
 
 .panel-group .panel {
     margin-bottom: 20px;
+    width: 326px;
+   
  }
 
+ .panel-group .panel-default{
+     width: 100%;
+ }
+
+
 .panel-green{
-	border-color: #5cb85c;
+    border: 1px solid #5cb85c;
+    border-radius: 3px;
 }
 .panel-green > .panel-heading {
-    border-color: #5cb85c;
     color: white;
     background-color: #5cb85c;
 }
@@ -24,10 +31,12 @@ main{
 }
 .panel-green > a:hover {
     color: #3d8b3d;
+    text-decoration: none;
 }
 
 .panel-yellow{
-    border-color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+    border-radius: 3px;
 }
 .panel-yellow > .panel-heading {
     border-color: #f0ad4e;
@@ -39,10 +48,12 @@ main{
 }
 .panel-yellow > a:hover {
     color: #df8a13;
+    text-decoration: none;
 }
 
 .panel-red{
-	border-color: #d9534f;
+	border: 1px solid #d9534f;
+    border-radius: 3px;
 }
 .panel-red > .panel-heading {
     border-color: #d9534f;
@@ -54,8 +65,32 @@ main{
 }
 .panel-red > a:hover {
     color: #b52b27;
+    text-decoration: none;
+}
+
+.panel-purple{
+	border: 1px solid #673AB7;
+    border-radius: 3px;
+}
+.panel-purple > .panel-heading {
+    color: white;
+    background-color: #673AB7;
+}
+.panel-purple > a {
+    color: #673AB7;
+}
+.panel-purple > a:hover {
+    color: #9575CD;
+    text-decoration: none;
 }
 
 .huge {
     font-size: 40px;
 }
+
+.panel-body {
+    border: 1px solid #636161;
+    border-radius: 3px;
+}
+
+
