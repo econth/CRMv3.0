@@ -1,20 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    LoginComponent,
+    DashboardComponent,
+    AppointmentComponent,
+    EmployeeComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
-    BsDropdownModule.forRoot(),
-    ButtonsModule.forRoot()
+    RouterModule.forRoot([
+      {path:  'home'  , component :  DashboardComponent   } ,
+      {path:  'login' , component :  LoginComponent  } ,
+      {path:  ''      , redirectTo:  'login',       pathMatch:'full'}
+    ])
 
   ],
   providers: [],
