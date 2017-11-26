@@ -2,3 +2,7 @@ nav.sidebar{
     margin-top: 57px;
     width: 256px;
 }
+
+.dropdown-toggle::after{
+    content:none;
+}

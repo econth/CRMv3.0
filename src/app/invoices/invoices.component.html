@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <h1> Invoices </h1>
+  <hr/>
+  <form>
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-row">
+        <input type="text" placeholder="Appointment No or Invoice No" class="form-control mr-3">
+        <button type="button" class="btn btn-md btn-info">Get Invoice</button>	
+      </div>
+      <div class="form-group mt-3">
+        <h3> Search results</h3>
+      </div>
+      <div class="form-group table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+              <th>SI No.</th>
+              <th>Invoice No.</th>
+              <th>Customer Name</th>
+              <th>Appointment No.</th>
+              <th></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>123456</td>
+              <td>Parthiban</td>
+              <td>2344567</td>
+              <td><a href="">View details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="form-group">
+          <h3> Detailed report of Parthiban</h3>
+        </div>
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Appointment No : </label>
+            <p class=""> 123456</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Invoice No : </label>
+            <p>2344567</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Customer Name : </label>
+            <p>Parthiban</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Mobile No : </label>
+            <p>9999-999-999</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Appointment Date : </label>
+            <p>12/12/2016</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Appointment Time : </label>
+            <p>7:00PM</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Total Amount : </label>
+            <p>600</p>
+          </div>
+          <div class="d-flex flex-row form-group">
+            <label class="font-weight-bold">Status : </label>
+            <p>Paid</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex flex-row flex-wrap">
+        <button type="button" class="btn btn-md btn-info m-2">Generate PDF</button>
+        <button type="button" class="btn btn-md btn-info m-2">Send Email</button>	
+        <button type="button" class="btn btn-md btn-info m-2">Send SMS</button>	
+      </div>
+    </div>
+  </form> 
+</div>

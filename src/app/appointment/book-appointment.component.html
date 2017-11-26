@@ -1,3 +1,36 @@
-<p>
-  book-appointment works!
-</p>
+<div class="container-fluid">
+  <h1>Book Appointment</h1>
+  <hr>
+  <div>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="firstname">Firstname</label>
+          <input type="text" class="form-control" id="firstname" aria-describedby="nameHelp" placeholder="Firstname"> 
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastname">Lastname</label>
+          <input type="text" class="form-control" id="lastname" aria-describedby="nameHelp" placeholder="Lastname"> 
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="doa">Date of Appointment</label>
+        <input type="text" class="form-control" id="doa" aria-describedby="dateHelp"> 
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="text" class="form-control" id="time" aria-describedby="timeHelp"> 
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile No.</label>
+        <input type="text" class="form-control" id="mobile" aria-describedby="mobileHelp"> 
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"> 
+      </div>
+      <button type="button" class="btn btn-info" >Book Appointment</button>
+      <button type="button" class="btn btn-danger" >Cancel</button>
+    </form>
+  </div>
+</div>

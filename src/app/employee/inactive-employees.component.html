@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <h1> Search Inactive Employees</h1>
+  <hr/>
+  <form>
+    <div class="d-flex flex-column">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        1 inactive Employee(s) found.
+      </div>
+      <div class="form-group d-flex flex-row">
+        <input type="text" name="employeename" placeholder="Enter the Employee first or last name" class="form-control mr-3">  
+        <button type="button" class="btn btn-md btn-info">Search</button>	
+      </div>
+      <div class="form-group">
+        <h3> Search results</h3>
+      </div>
+      <div class="form-group table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+              <th>SI No.</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Date Of Birth</th>
+              <th>Mobile Number</th>
+              <th>E-Mail</th>
+              <th></th>	
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Praveen</td>
+              <td>Kumar</td>
+              <td>22/10/1990</td>
+              <td>9988776655</td>
+              <td>pravren@gmail.com</td>
+              <td class="d-flex d-xs-column d-md-row justify-content-start">
+                <button type="button" class="btn btn-sm btn-primary mr-2"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i> Make as Active</button>
+                <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash fa-1x" aria-hidden="true"></i> Delete Permanently</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="">
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>  
+      </div>	
+    </div>
+  </form> 
+</div>
+  

@@ -16,9 +16,9 @@
         <i class="fa fa-sticky-note-o fa-lg" aria-hidden="true"></i> Appointments
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="customerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-gift fa-lg" aria-hidden="true"></i> Customer
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="customerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-gift fa-lg" aria-hidden="true"></i> Customers
         <span class="pull-right">
           <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
         </span>
@@ -28,38 +28,38 @@
           <i class="fa fa-plus fa-lg" aria-hidden="true"></i> Add Customer</a>
         <a class="dropdown-item" routerLink="search-customer">
           <i class="fa fa-search fa-lg" aria-hidden="true"></i> Search Customer</a>
-        <a class="dropdown-item" routerLink="inactive-customer">
+        <a class="dropdown-item" routerLink="inactive-customers">
           <i class="fa fa-ban fa-lg" aria-hidden="true"></i> Inactive Customers</a>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" id="employeeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="employeeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-globe fa-lg" aria-hidden="true"></i> Employees
         <span class="pull-right">
           <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
         </span>
       </a>
       <div class="dropdown-menu" aria-labelledby="employeeDropdownMenu">
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" routerLink="add-employee">
           <i class="fa fa-plus fa-lg" aria-hidden="true"></i> Add Employee</a>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" routerLink="search-employee">
           <i class="fa fa-search fa-lg" aria-hidden="true"></i> Search Employee</a>
-        <a class="dropdown-item" href="#">
+        <a class="dropdown-item" routerLink="inactive-employees">
           <i class="fa fa-ban fa-lg" aria-hidden="true"></i> Inactive Employees</a>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" routerLink="accounts">
         <i class="fa fa-user fa-lg" aria-hidden="true"></i> Accounts
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" routerLink="invoices">
         <i class="fa fa-history fa-lg" aria-hidden="true"></i> Invoices
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" routerLink="reports">
         <i class="fa fa-file-text fa-lg" aria-hidden="true"></i> Reports
       </a>
     </li>
