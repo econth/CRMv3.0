@@ -1,4 +1,9 @@
 .bg-colour{
-    background-color: #AB47BC;
+    background-color: darkorchid;
+    height: 100vh;
 }
+.login-padding{
+    padding-top: 100px;
+}
+
 
