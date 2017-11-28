@@ -10,28 +10,13 @@ export const AppRoutes : Routes=[{
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
     },{
-        path: 'book-appointment',
+        path: 'appointment',
         loadChildren: './appointment/appointment.module#AppointmentModule'
     },{
-        path: 'list-appointments',
-        loadChildren: './appointment/appointment.module#AppointmentModule'
-    },{
-        path: 'add-employee',
+        path: 'employee',
         loadChildren: './employee/employee.module#EmployeeModule'
     },{
-        path: 'search-employee',
-        loadChildren: './employee/employee.module#EmployeeModule'
-    },{
-        path: 'inactive-employees',
-        loadChildren: './employee/employee.module#EmployeeModule'
-    },{
-        path: 'add-customer',
-        loadChildren: './customer/customer.module#CustomerModule'
-    },{
-        path: 'search-customer',
-        loadChildren: './customer/customer.module#CustomerModule'
-    },{
-        path: 'inactive-customers',
+        path: 'customer',
         loadChildren: './customer/customer.module#CustomerModule'
     },{
         path: 'accounts',
