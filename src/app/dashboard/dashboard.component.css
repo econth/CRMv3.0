@@ -1,13 +1,11 @@
 .panel-group .panel {
     margin-bottom: 20px;
-    width: 326px;
-   
+    width: 326px; 
  }
 
  .panel-group .panel-default{
      width: 100%;
  }
-
 
 .panel-green{
     border: 1px solid #5cb85c;
