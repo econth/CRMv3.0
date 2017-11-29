@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../_service/authentication.service';
 
 @Component({
   selector: 'econth-sidebar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EconthSidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.authenticationService.logout();
   }
 
 }

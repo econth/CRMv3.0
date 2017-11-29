@@ -1,0 +1,30 @@
+<div class="bg-colour">
+  <div class="container login-padding">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Please Register</h3>
+          </div>
+          <div class="panel-body">
+              <form class="d-flex flex-column">
+                  <div class="form-group">
+                      <input class="form-control" [(ngModel)]="model.username" placeholder="E-mail" name="email" type="text">
+                  </div>
+                  <div class="form-group">
+                      <input class="form-control" [(ngModel)]="model.password" placeholder="Password" name="password" type="password">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" [(ngModel)]="model.fullname" placeholder="Full Name" name="fullname" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" [(ngModel)]="model.mobile" placeholder="Mobile No" name="mobile" type="text">
+                  </div>
+                  <div class="d-flex flex-column">
+                    <button type="button" class="btn btn-info bth-block m-2" (click)="register()">Register</button>
+                    <button type="button" class="btn btn-info bth-block m-2" routerLink="/login">Cancel</button>
+                  </div>
+                 
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

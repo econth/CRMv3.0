@@ -1,0 +1,16 @@
+[
+    {
+        "id"        : 1,
+        "username"  : "parthi",
+        "password"  : "parthi",
+        "fullname"  : "Parthiban",
+        "mobile"    : 8147969642  
+    },{
+        "id"        : 2,
+        "username"  : "praveen",
+        "password"  : "kumar",
+        "fullname"  : "Praveen Kumar",
+        "mobile"    : 9999999999  
+    }
+    
+]
