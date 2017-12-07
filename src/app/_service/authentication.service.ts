@@ -14,14 +14,15 @@ export class AuthenticationService{
 
    
     login(){
-        this.http
-        .get('./assets/data/user.json')
-        .map(x => x.json )
-        .map( (data) => 
-          this._data = data
-        )
-      console.log(this._data);
-    
+        // this.http
+        // .get('../assets/data/user.json')
+        // .map(x => x.json() )
+        // .map( (data) => 
+        //   this._data = data
+        // )
+        // return this._data;
+
+        return this.http.get('../assets/data/user.json').map(res => res.json());
     }
 
     logout(){
