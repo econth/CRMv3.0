@@ -19,12 +19,12 @@ export class DashboardComponent implements OnInit{
 
     ngOnInit(){
 
-        this.service.login().subscribe((user) => {
-            console.log('product-list received updated products');
-            this.users = user;
-            console.log("User",this.users);
-          });
-
+        // this.service.login().subscribe((user) => {
+        //     console.log('product-list received updated products');
+        //     this.users = user;
+        //     console.log("User",this.users);
+        //   });s
+        //this.service.login();
           
     }
 

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 import { CustomerRoutes } from './customer.routing';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
@@ -8,7 +11,9 @@ import { InactiveCustomersComponent } from './inactive-customers/inactive-custom
 
 @NgModule({
     imports:[
-        RouterModule.forChild(CustomerRoutes)
+        RouterModule.forChild(CustomerRoutes),
+        CommonModule,
+        FormsModule
     ],
     declarations:[
         AddCustomerComponent,

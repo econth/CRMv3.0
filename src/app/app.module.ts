@@ -15,6 +15,7 @@ import { EconthSidebarComponent } from './_directives/econth-sidebar/econth-side
 
 import { AuthenticationService } from './_service/authentication.service';
 import { AppointmentService } from './_service/appointment.service';
+import { UserService } from './_service/user.service';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AppointmentService } from './_service/appointment.service';
   ],
   providers: [
     AuthenticationService,
-    AppointmentService
+    AppointmentService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

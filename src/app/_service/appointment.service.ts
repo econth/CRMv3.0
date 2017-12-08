@@ -11,4 +11,8 @@ export class AppointmentService{
         return this.http.get('../assets/data/appointments.json')
                    .map((response:Response)=>response.json())
     }
+
+    bookAppointment(){
+        
+    }
 }
