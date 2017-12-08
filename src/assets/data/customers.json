@@ -1,0 +1,134 @@
+[
+    {
+        "id"            : 1,
+        "firstname"     : "Parthi",
+        "lastname"      : "Govind",
+        "sex"           : "Male",
+        "dob"           : "21/10/1990",
+        "mobilenumber"  : 1122334455,
+        "email"         : "kgparthi@gmail.com",
+        "username"      : "parthi_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 2,
+        "firstname"     : "Praveen",
+        "lastname"      : "Kumar",
+        "sex"           : "Male",
+        "dob"           : "22/10/1989",
+        "mobilenumber"  : 2211886655,
+        "email"         : "praveen@yahoo.com",
+        "username"      : "praveen_1234",
+        "password"      : "098765",
+        "status"        : "inactive",
+        "role"          : "C"
+
+    },{
+        "id"            : 3,
+        "firstname"     : "Kumaran",
+        "lastname"      : "S",
+        "sex"           : "Male",
+        "dob"           : "12/12/1990",
+        "mobilenumber"  : 999999666,
+        "email"         : "kumaran@gmail.com",
+        "username"      : "kumar_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 4,
+        "firstname"     : "Hari",
+        "lastname"      : "Garasan",
+        "sex"           : "Male",
+        "dob"           : "22/01/1988",
+        "mobilenumber"  : 6677881233,
+        "email"         : "Hari@econth.com",
+        "username"      : "hari_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 5,
+        "firstname"     : "Thana",
+        "lastname"      : "Lakshmi",
+        "sex"           : "Female",
+        "dob"           : "21/06/1988",
+        "mobilenumber"  : 2233344566,
+        "email"         : "thana@econth.com",
+        "username"      : "thana_1234",
+        "password"      : "123456",
+        "status"        : "inactive",
+        "role"          : "C"
+
+    },{
+        "id"            : 6,
+        "firstname"     : "Sridhar",
+        "lastname"      : "L",
+        "sex"           : "Male",
+        "dob"           : "15/08/1994",
+        "mobilenumber"  : 1122334455,
+        "email"         : "sridhar@econth.com",
+        "username"      : "parthi_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 7,
+        "firstname"     : "Praveen",
+        "lastname"      : "Kumar",
+        "sex"           : "Male",
+        "dob"           : "22/10/1989",
+        "mobilenumber"  : 2211886655,
+        "email"         : "praveen@econth.com",
+        "username"      : "praveen_1234",
+        "password"      : "098765",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 8,
+        "firstname"     : "Kumaran",
+        "lastname"      : "S",
+        "sex"           : "Male",
+        "dob"           : "12/12/1990",
+        "mobilenumber"  : 999999666,
+        "email"         : "kumaran@econth.com",
+        "username"      : "kumar_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    },{
+        "id"            : 9,
+        "firstname"     : "Hari",
+        "lastname"      : "Garasan",
+        "sex"           : "Male",
+        "dob"           : "22/01/1988",
+        "mobilenumber"  : 6677881233,
+        "email"         : "Hari@econth.com",
+        "username"      : "hari_1234",
+        "password"      : "123456",
+        "status"        : "inactive",
+        "role"          : "C"
+
+    },{
+        "id"            : 10,
+        "firstname"     : "Thana",
+        "lastname"      : "Lakshmi",
+        "sex"           : "Female",
+        "dob"           : "21/06/1988",
+        "mobilenumber"  : 2233344566,
+        "email"         : "thana@econth.com",
+        "username"      : "thana_1234",
+        "password"      : "123456",
+        "status"        : "active",
+        "role"          : "C"
+
+    }
+    
+]

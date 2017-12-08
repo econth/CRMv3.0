@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppointmentService } from '../../_service/appointment.service';
 
 @Component({
   selector: 'econth-list-appointments',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListAppointmentsComponent implements OnInit {
 
-  constructor() { }
+  appointments:any;
+
+  constructor(private service:AppointmentService) { }
 
   ngOnInit() {
+    this.service.getAllAppointments().subscribe((appointment) => {
+      this.appointments = appointment;
+      console.log("appointments",this.appointments);
+    });
   }
 
 }

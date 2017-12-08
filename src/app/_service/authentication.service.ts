@@ -22,7 +22,7 @@ export class AuthenticationService{
         // )
         // return this._data;
 
-        return this.http.get('../assets/data/user.json').map(res => res.json());
+        return this.http.get('../assets/data/customers.json').map(res => res.json());
     }
 
     logout(){

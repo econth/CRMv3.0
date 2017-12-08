@@ -24,28 +24,18 @@
             <th></th>	
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>22/11/2017</td>
-            <td>02:00 PM</td>
-            <td>9147969642</td>
-            <td>kg@ymail.com</td>
+        <tbody> 
+          <tr *ngFor="let appointment of appointments">
+            <td>{{appointment.id}}</td>
+            <td>{{appointment.doa}}</td>
+            <td>{{appointment.time}}</td>
+            <td>{{appointment.mobilenumber}}</td>
+            <td>{{appointment.email}}</td>
             <td>
               <a href="">view details</a>
             </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>23/11/2017</td>
-            <td>04:00 PM</td>
-            <td>9133969642</td>
-            <td>br@ymail.com</td>
-            <td>
-              <a href="">view details</a>
-            </td>
-          </tr>
-        </tbody>
+       </tbody>
       </table>
     </div>
     <div>
