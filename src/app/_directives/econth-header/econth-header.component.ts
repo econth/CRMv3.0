@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../_service/authentication.service';
 
 @Component({
   selector: 'econth-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EconthHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService:AuthenticationService) { }
 
-  ngOnInit() {
+  ngOnInit() {  }
+
+  logout(){
+    this.authenticationService.logout();
   }
 
 }

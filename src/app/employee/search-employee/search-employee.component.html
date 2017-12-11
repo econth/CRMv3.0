@@ -13,7 +13,7 @@
         <input type="text" name="searchText" [(ngModel)]="searchText" placeholder="Enter the Employee first or last name" class="form-control mr-3">  
         <button type="button" class="btn btn-md btn-info" (click)="searchEmployee()">Search</button>	
       </div>
-      <div *ngIf="employees.length>0">
+      <div *ngIf="employees.length">
         <div class="form-group">
           <h3> Search results</h3>
         </div>
