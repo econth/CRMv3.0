@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { PipeModule } from './../_pipe/pipe.module';
 
 import { EmployeeRoutes } from './employee.routing';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
@@ -14,7 +15,8 @@ import { EmployeeService } from './../_service/employee.service';
     imports:[
         RouterModule.forChild(EmployeeRoutes),
         FormsModule,
-        CommonModule
+        CommonModule,
+        PipeModule
     ],
     declarations:[
         AddEmployeeComponent,

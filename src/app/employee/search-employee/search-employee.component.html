@@ -30,7 +30,7 @@
                 <th></th>	
               </tr>
             </thead>
-            <tbody *ngFor="let employee of employees">
+            <tbody *ngFor="let employee of (employees | searchFilter: searchText: 'firstname,lastname')">
               <tr>
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstname}}</td>
