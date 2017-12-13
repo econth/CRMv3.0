@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 
+import * as $ from 'jquery';
+
 import { AppRoutes } from './app.routing'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
