@@ -12,4 +12,14 @@ export class AddCustomerComponent implements OnInit {
   ngOnInit() {
   }
 
+  datepickerOpts = {
+    startDate   : new Date(1800,0,1),
+    endDate     : new Date(),
+    todayBtn: 'linked',
+    todayHighlight: true,
+    format: 'dd/mm/yyyy',
+    icon: 'fa fa-calendar',
+    autoclose:true
+};
+
 }

@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PipeModule } from './../_pipe/pipe.module';
+import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
+
 
 import { EmployeeRoutes } from './employee.routing';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
@@ -16,7 +18,9 @@ import { EmployeeService } from './../_service/employee.service';
         RouterModule.forChild(EmployeeRoutes),
         FormsModule,
         CommonModule,
-        PipeModule
+        PipeModule,
+        NKDatetimeModule
+        
     ],
     declarations:[
         AddEmployeeComponent,

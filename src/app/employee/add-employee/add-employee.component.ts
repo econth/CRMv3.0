@@ -18,6 +18,17 @@ export class AddEmployeeComponent implements OnInit {
     
   }
 
+  datepickerOpts = {
+    startDate   : new Date(1800,0,1),
+    endDate     : new Date(),
+    todayBtn: 'linked',
+    todayHighlight: true,
+    format: 'dd/mm/yyyy',
+    icon: 'fa fa-calendar',
+    autoclose:true
+};
+
+
   addEmployee(){
     this.employeeService.createEmployee(this.model)
         .subscribe(
