@@ -16,7 +16,7 @@ import { EconthHeaderComponent } from './_directives/econth-header/econth-header
 import { EconthSidebarComponent } from './_directives/econth-sidebar/econth-sidebar.component';
 
 import { AuthenticationService } from './_service/authentication.service';
-import { AppointmentService } from './_service/appointment.service';
+
 import { UserService } from './_service/user.service';
 
 
@@ -38,7 +38,7 @@ import { UserService } from './_service/user.service';
   ],
   providers: [
     AuthenticationService,
-    AppointmentService,
+    
     UserService
   ],
   bootstrap: [AppComponent]

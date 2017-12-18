@@ -4,7 +4,8 @@ import { AppointmentService } from '../../_service/appointment.service';
 @Component({
   selector: 'econth-list-appointments',
   templateUrl: './list-appointments.component.html',
-  styleUrls: ['./list-appointments.component.css']
+  styleUrls: ['./list-appointments.component.css'],
+  providers:[AppointmentService]
 })
 export class ListAppointmentsComponent implements OnInit {
 
