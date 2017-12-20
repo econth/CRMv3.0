@@ -15,7 +15,7 @@ export class CustomerService{
     }
 
     getAllCustomers(){
-        return this.http.get('').map((response: Response)=>response.json());
+        return this.http.get('../assets/data/customers.json').map((response: Response)=>response.json());
     }
 
     getById(id: number){

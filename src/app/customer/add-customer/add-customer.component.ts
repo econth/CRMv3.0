@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CustomerService } from '../../_service/customer.service';
+
 @Component({
   selector: 'econth-add-customer',
   templateUrl: './add-customer.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
+
+  model:any={};
 
   ngOnInit() {
   }
@@ -20,6 +24,21 @@ export class AddCustomerComponent implements OnInit {
     format: 'dd/mm/yyyy',
     icon: 'fa fa-calendar',
     autoclose:true
-};
+  };
+
+  addCustomer(){
+    this.customerService.createCustomer(this.model)
+        .subscribe(
+          data=>{
+            alert("1 Customer has been added");
+          },
+          error=>{
+            alert("Unable to add Customer");
+          });      
+  }
+
+  reset(){
+    this.model={};
+  }
 
 }

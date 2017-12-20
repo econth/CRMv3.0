@@ -11,27 +11,23 @@
       </div>
       <div class="form-group">
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" placeholder="First Name" class="form-control">
+        <input type="text" name="firstname" [(ngModel)]="model.firstname" placeholder="First Name" class="form-control">
       </div>
       <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" placeholder="Last Name" class="form-control">
+        <input type="text" name="lastname" [(ngModel)]="model.lastname" placeholder="Last Name" class="form-control">
       </div>
       <div class="form-group">
         <label for="dob">Date of Birth</label>
-        <datetime [(ngModel)]="dob" name="dob" [timepicker]="false" [datepicker]="datepickerOpts" id="dob" aria-describedby="dateOfBirthHelp"></datetime>
-      </div>	
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="Username" class="form-control">
-      </div>	
+        <datetime  name="dob" [(ngModel)]="model.dob" [timepicker]="false" [datepicker]="datepickerOpts" id="dob" aria-describedby="dateOfBirthHelp"></datetime>
+      </div>		
       <div class="form-group">
         <label for="mobilenumber">Mobile Number</label>
-        <input type="text" name="mobilenumber" placeholder="Mobile Number" class="form-control">
+        <input type="text" name="mobilenumber" [(ngModel)]="model.mobilenumber" placeholder="Mobile Number" class="form-control">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" name="email" placeholder="Email Address" class="form-control">
+        <input type="text" name="email" [(ngModel)]="model.email" placeholder="Email Address" class="form-control">
       </div>
       <div class="d-md-none d-xs-flex alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -40,8 +36,8 @@
         1 Customer has been added.
       </div>
       <div class="flex-row">
-        <button type="button" class="btn btn-md btn-info">Add Customer</button>	
-        <button type="button" class="btn btn-md btn-info">Reset</button>
+        <button type="button" class="btn btn-md btn-info" (click)="addCustomer()">Add Customer</button>	
+        <button type="button" class="btn btn-md btn-info" (click)="reset()">Reset</button>
       </div>
     </div>
   </form>

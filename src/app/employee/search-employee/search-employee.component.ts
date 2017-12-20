@@ -10,7 +10,6 @@ import { EmployeeService } from '../../_service/employee.service';
 export class SearchEmployeeComponent implements OnInit {
 
   model:any={};
-  showAlertMessage="true";
   employees:any;
 
   constructor(private employeeService:EmployeeService) { }
@@ -26,7 +25,7 @@ export class SearchEmployeeComponent implements OnInit {
             this.employees=data;
           },
           error=>{
-            alert("Unable to retrieve employees");
+            alert("Unable to retrieve any employee");
           });
   }
 
@@ -37,7 +36,7 @@ export class SearchEmployeeComponent implements OnInit {
 
           },
           error=>{
-
+            alert("Unable to retrieve any employee");
           });
   }
 
@@ -48,19 +47,18 @@ export class SearchEmployeeComponent implements OnInit {
 
           },
           error=>{
-            
+            alert("Unable to update the employee");
           });
   }
 
-  deleteEmployee(){
-    this.employeeService.deleteEmployee(this.model.id)
+  softDeleteEmployee(){
+    this.employeeService.updateEmployee(this.model.id)
         .subscribe(
           data=>{
 
           },
           error=>{
-            
+            alert("Unable to soft delete the employee");
           });
   }
-
 }
