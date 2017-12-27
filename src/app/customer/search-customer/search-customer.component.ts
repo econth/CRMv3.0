@@ -10,7 +10,11 @@ import { CustomerService } from '../../_service/customer.service';
 export class SearchCustomerComponent implements OnInit {
 
   model:any={};
-  customers:any;
+  customers:any=[];
+
+  public currentPage:number = 1;
+  public totalItems:number = 10;
+  public maxSize:number = 3;
 
   constructor(private customerService:CustomerService) { }
 
@@ -61,5 +65,14 @@ export class SearchCustomerComponent implements OnInit {
             alert("Unable to soft delete the customer");
           });
   }
+  setPage(pageNo:number):void {
+    this.currentPage = pageNo;  
+  };
+
+  pageChanged(event:any):void {
+    console.log('Number items per page: ' + event.itemsPerPage);
+    
+  };
+
 
 }
