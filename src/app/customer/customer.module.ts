@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
+import { DirectiveModule } from './../_directives/directive.module';
 
 import { CustomerRoutes } from './customer.routing';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
@@ -16,7 +17,8 @@ import { CustomerService } from '../_service/customer.service';
         RouterModule.forChild(CustomerRoutes),
         CommonModule,
         FormsModule,
-        NKDatetimeModule
+        NKDatetimeModule,
+        DirectiveModule
     ],
     declarations:[
         AddCustomerComponent,
