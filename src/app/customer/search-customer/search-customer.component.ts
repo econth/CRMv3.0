@@ -11,6 +11,13 @@ export class SearchCustomerComponent implements OnInit {
 
   model:any={};
   customers:any=[];
+<<<<<<< HEAD
+=======
+
+  public currentPage:number = 1;
+  public totalItems:number = 10;
+  public maxSize:number = 3;
+>>>>>>> 81ee04a535478477b1150f8884ae8022f1260c0d
 
   public currentPage:number;
   public totalItems:number;
@@ -73,7 +80,10 @@ export class SearchCustomerComponent implements OnInit {
 
   pageChanged(event:any):void {
     console.log('Number items per page: ' + event.itemsPerPage);
+<<<<<<< HEAD
     console.log('Current Page: ' + this.currentPage);
+=======
+>>>>>>> 81ee04a535478477b1150f8884ae8022f1260c0d
     
   };
 
