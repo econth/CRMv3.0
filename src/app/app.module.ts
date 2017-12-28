@@ -12,12 +12,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
-import { EconthHeaderComponent } from './_directives/econth-header/econth-header.component';
-import { EconthSidebarComponent } from './_directives/econth-sidebar/econth-sidebar.component';
+import { EconthHeaderComponent } from './shared/econth-header/econth-header.component';
+import { EconthSidebarComponent } from './shared/econth-sidebar/econth-sidebar.component';
 
 import { AuthenticationService } from './_service/authentication.service';
-
 import { UserService } from './_service/user.service';
+
 
 
 @NgModule({
@@ -38,7 +38,6 @@ import { UserService } from './_service/user.service';
   ],
   providers: [
     AuthenticationService,
-    
     UserService
   ],
   bootstrap: [AppComponent]

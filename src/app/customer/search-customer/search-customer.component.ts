@@ -10,9 +10,15 @@ import { CustomerService } from '../../_service/customer.service';
 export class SearchCustomerComponent implements OnInit {
 
   model:any={};
-  customers:any;
+  customers:any=[];
 
-  constructor(private customerService:CustomerService) { }
+  public currentPage:number;
+  public totalItems:number;
+  public maxSize:number;
+
+  constructor(private customerService:CustomerService) { 
+    this.currentPage;
+  }
 
   ngOnInit() {
     this.getAllCustomers();
@@ -61,5 +67,15 @@ export class SearchCustomerComponent implements OnInit {
             alert("Unable to soft delete the customer");
           });
   }
+  setPage(pageNo:number):void {
+    this.currentPage = pageNo;  
+  };
+
+  pageChanged(event:any):void {
+    console.log('Number items per page: ' + event.itemsPerPage);
+    console.log('Current Page: ' + this.currentPage);
+    
+  };
+
 
 }
