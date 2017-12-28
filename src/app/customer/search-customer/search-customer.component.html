@@ -30,7 +30,7 @@
                 <th></th>	
               </tr>
             </thead>
-            <tbody *ngFor="let customer of customers | paginate : 5 : 1">
+            <tbody *ngFor="let customer of customers | paginate : maxSize : currentPage">
               <tr>
                 <td>{{customer.id}}</td>
                 <td>{{customer.firstname}}</td>

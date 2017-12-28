@@ -12,13 +12,13 @@ export class SearchCustomerComponent implements OnInit {
   model:any={};
   customers:any=[];
 
-  public currentPage:number = 1;
-  public totalItems:number = 10;
-  public maxSize:number = 3;
+  public currentPage:number=1;
+  public totalItems:number=10;
+  public maxSize:number=3;
 
 
   constructor(private customerService:CustomerService) { 
-    this.currentPage;
+    
   }
 
   ngOnInit() {
