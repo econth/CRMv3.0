@@ -66,7 +66,7 @@
           </table>
         </div>
       </div>
-      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true"></econth-pagination>
+      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" maxSize="3" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true"></econth-pagination>
     </div>
   </form> 
 </div>

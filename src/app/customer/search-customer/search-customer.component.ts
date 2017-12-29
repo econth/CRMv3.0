@@ -13,7 +13,7 @@ export class SearchCustomerComponent implements OnInit {
   customers:any=[];
 
   public currentPage:number=1;
-  public totalItems:number=10;
+  public totalItems:number=200;
   public maxSize:number=3;
 
 
@@ -30,6 +30,7 @@ export class SearchCustomerComponent implements OnInit {
         .subscribe(
           data=>{
             this.customers=data;
+            this.totalItems=this.customers.length;
           },
           error=>{
             alert("Unable to retrieve any customer");
