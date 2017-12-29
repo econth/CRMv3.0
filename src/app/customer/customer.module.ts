@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { OrderModule } from 'ngx-order-pipe';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 import { DirectiveModule } from './../_directives/directive.module';
 import { PipeModule } from './../_pipe/pipe.module';
@@ -20,7 +21,8 @@ import { CustomerService } from '../_service/customer.service';
         FormsModule,
         NKDatetimeModule,
         DirectiveModule,
-        PipeModule
+        PipeModule,
+        OrderModule
     ],
     declarations:[
         AddCustomerComponent,

@@ -7,7 +7,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        1 Customer found.
+        {{customers.length}} Customer found.
       </div>
       <div class="form-group d-flex flex-row">
         <input type="text" name="customername" [(ngModel)]="searchText" placeholder="Enter the Customer first name or last name" class="form-control mr-3">  
@@ -21,16 +21,28 @@
           <table class="table table-bordered table-hover table-striped">
             <thead>
               <tr>
-                <th>SI No.</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Date Of Birth</th>
-                <th>Mobile Number</th>
-                <th>E-Mail</th>
+                <th (click)="sort('id')">SI No. 
+                  <i class="fa fa-lg" *ngIf="key =='id'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('firstname')">FirstName 
+                  <i class="fa fa-lg" *ngIf="key =='firstname'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('lastname')">LastName 
+                  <i class="fa fa-lg" *ngIf="key =='lastname'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('dob')">Date Of Birth 
+                  <i class="fa fa-lg" *ngIf="key =='dob'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('mobilenumber')">Mobile Number 
+                  <i class="fa fa-lg" *ngIf="key =='mobilenumber'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('email')">E-Mail 
+                  <i class="fa fa-lg" *ngIf="key =='email'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
                 <th></th>	
               </tr>
             </thead>
-            <tbody *ngFor="let customer of customers | paginate : maxSize : currentPage">
+            <tbody *ngFor="let customer of customers | paginate : maxSize : currentPage | orderBy: key: reverse">
               <tr>
                 <td>{{customer.id}}</td>
                 <td>{{customer.firstname}}</td>

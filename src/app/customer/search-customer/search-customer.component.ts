@@ -15,10 +15,17 @@ export class SearchCustomerComponent implements OnInit {
   public currentPage:number=1;
   public totalItems:number=200;
   public maxSize:number=3;
+  public key: string = 'firstname'; 
+  public reverse: boolean = false;
 
 
   constructor(private customerService:CustomerService) { 
-    
+   
+  }
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
   ngOnInit() {
