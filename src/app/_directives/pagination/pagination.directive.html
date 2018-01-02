@@ -3,13 +3,13 @@
         <li *ngIf="previousItemValid" class="page-item" (click)="firstPage()">
           <a class="page-link">First</a>
         </li>
-        <li *ngIf="previousItemValid" class="page-item" (click)="previousPage(nextItem)">
+        <li *ngIf="previousItemValid" class="page-item" (click)="previousPage(seletedPage)">
           <a class="page-link"><i class="fa fa-backward" aria-hidden="true"></i></a>
         </li>
         <li class="page-item" *ngFor="let pageNo of pageList" [ngClass]="{'active':seletedPage === pageNo}">
           <a class="page-link" (click)="setCurrentPage(pageNo)">{{pageNo}}</a>
         </li>
-        <li *ngIf="nextItemValid" class="page-item" (click)="nextPage(nextItem)">
+        <li *ngIf="nextItemValid" class="page-item" (click)="nextPage(seletedPage)">
           <a class="page-link"><i class="fa fa-forward" aria-hidden="true"></i></a>
         </li>
         <li *ngIf="nextItemValid" class="page-item" (click)="lastPage()">

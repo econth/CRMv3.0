@@ -13,10 +13,12 @@ export class SearchCustomerComponent implements OnInit {
   customers:any=[];
 
   public currentPage:number=1;
-  public totalItems:number=200;
+  public totalItems:number= 100;
   public maxSize:number=3;
-  public key: string = 'firstname'; 
+  public itemsPage:number=8;
+  public key: string = 'id'; 
   public reverse: boolean = false;
+  public itemsPerPage:number=this.itemsPage;
 
 
   constructor(private customerService:CustomerService) { 

@@ -42,7 +42,7 @@
                 <th></th>	
               </tr>
             </thead>
-            <tbody *ngFor="let customer of customers | paginate : maxSize : currentPage | orderBy: key: reverse">
+            <tbody *ngFor="let customer of customers | paginate : itemsPage : currentPage | orderBy : key : reverse">
               <tr>
                 <td>{{customer.id}}</td>
                 <td>{{customer.firstname}}</td>
@@ -78,7 +78,7 @@
           </table>
         </div>
       </div>
-      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" maxSize="3" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true"></econth-pagination>
+      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true" [itemsPerPage]="itemsPerPage"></econth-pagination>
     </div>
   </form> 
 </div>
