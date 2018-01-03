@@ -46,6 +46,10 @@ export class AddEmployeeComponent implements OnInit {
     this.model={};
   }
 
+  generateUsername(){
+    this.model.username="Emp_600811";
+  }
+
 
   
 

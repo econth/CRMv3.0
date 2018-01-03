@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAppointmentComponent implements OnInit {
 
+  model:any={};
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
   date: Date = new Date();
@@ -23,16 +26,23 @@ export class BookAppointmentComponent implements OnInit {
     icon: 'fa fa-calendar',
     autoclose:true,
     daysOfWeekDisabled:"0,6"
-};
+  };
 
-timepickerOpts={
-  icon: 'fa fa-clock-o', 
-  template:'dropdown',
-  icons:{
-    up: 'fa fa-chevron-up',
-    down: 'fa fa-chevron-down'
-}
+  timepickerOpts={
+    icon: 'fa fa-clock-o', 
+    template:'dropdown',
+    icons:{
+      up: 'fa fa-chevron-up',
+      down: 'fa fa-chevron-down'
+    }
+  };
 
-};
+  bookAppointment(){
+    alert("unable to book Appointment");
+  }
+
+  reset(){
+    this.model={};
+  }
 
 }
