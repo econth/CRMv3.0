@@ -9,12 +9,25 @@ import { CustomerService } from '../../_service/customer.service';
 })
 export class InactiveCustomersComponent implements OnInit {
 
+  public currentPage:number=1;
+  public totalItems:number= 1;
+  public maxSize:number=3;
+  public itemsPage:number=1;
+  public key: string = 'id'; 
+  public reverse: boolean = false;
+  public itemsPerPage:number=this.itemsPage;
+
+  model:any={};
+
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
   }
 
-  model:any={};
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   makeAsActiveCustomer(){
     this.customerService.updateCustomer(this.model)

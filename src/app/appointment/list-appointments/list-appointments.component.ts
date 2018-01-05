@@ -9,7 +9,16 @@ import { AppointmentService } from '../../_service/appointment.service';
 })
 export class ListAppointmentsComponent implements OnInit {
 
-  appointments:any;
+  appointments:any=[];
+
+  public currentPage:number=1;
+  public totalItems:number= 3;
+  public maxSize:number=2;
+  public itemsPage:number=1;
+  public key: string = 'id'; 
+  public reverse: boolean = false;
+  public itemsPerPage:number=this.itemsPage;
+
 
   constructor(private service:AppointmentService) { }
 
@@ -18,6 +27,11 @@ export class ListAppointmentsComponent implements OnInit {
       this.appointments = appointment;
       console.log("appointments",this.appointments);
     });
+  }
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 }

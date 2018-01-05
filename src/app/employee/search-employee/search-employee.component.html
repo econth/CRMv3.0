@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <h1> Search Employee</h1>
+  <h1> {{pageTitle}}</h1>
   <hr/>
   <form>
     <div class="d-flex flex-column">
-      <div class="alert alert-success alert-dismissible fade show"  *ngIf="showAlertMessage" role="alert">
+      <div *ngIf="showAlertMessage" class="alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
         <input type="text" name="searchText" [(ngModel)]="searchText" placeholder="Enter the Employee first name or last name" class="form-control mr-3">  
         <button type="button" class="btn btn-md btn-info" (click)="searchEmployee()">Search</button>	
       </div>
-      <div *ngIf="employees.length">
+      <div *ngIf="employees.length>0">
         <div class="form-group">
           <h3> Search results</h3>
         </div>
@@ -21,16 +21,28 @@
           <table class="table table-bordered table-hover table-striped">
             <thead>
               <tr>
-                <th>SI No.</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Date Of Birth</th>
-                <th>Mobile Number</th>
-                <th>E-Mail</th>
+                <th (click)="sort('id')">SI No. 
+                  <i class="fa fa-lg" *ngIf="key =='id'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('firstname')">FirstName 
+                  <i class="fa fa-lg" *ngIf="key =='firstname'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('lastname')">LastName 
+                  <i class="fa fa-lg" *ngIf="key =='lastname'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('dob')">Date Of Birth 
+                  <i class="fa fa-lg" *ngIf="key =='dob'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('mobilenumber')">Mobile Number 
+                  <i class="fa fa-lg" *ngIf="key =='mobilenumber'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
+                <th (click)="sort('email')">E-Mail 
+                  <i class="fa fa-lg" *ngIf="key =='email'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+                </th>
                 <th></th>	
               </tr>
             </thead>
-            <tbody *ngFor="let employee of (employees | searchFilter: searchText: 'firstname,lastname')">
+            <tbody *ngFor="let employee of employees | paginate : itemsPage : currentPage | orderBy : key : reverse ">
               <tr>
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstname}}</td>
@@ -43,42 +55,30 @@
                   <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#softDeleteEmployeeModal"><i class="fa fa-trash fa-1x" aria-hidden="true"></i> Delete</button>
                 </td>
               </tr>
-              <div class="modal" id="softDeleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="softDeleteEmployeeModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="softDeleteEmployeeModalLabel">Soft Delete Employee</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      Are you sure want to make the employee as inactive?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="softDeleteEmployee(employee)" >Make as inactive</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </tbody>
           </table>
         </div>
-        <div class="">
-          <ul class="pagination justify-content-end">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>  
-        </div>	
+        <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true" [itemsPerPage]="itemsPerPage"></econth-pagination>
       </div>
     </div>
   </form> 
+  <div class="modal" id="softDeleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="softDeleteEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="softDeleteEmployeeModalLabel">Soft Delete Employee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure want to make the employee as inactive?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="softDeleteEmployee(employee)" >Make as inactive</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

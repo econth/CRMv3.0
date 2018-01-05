@@ -9,9 +9,12 @@ import { CustomerService } from '../../_service/customer.service';
 })
 export class AddCustomerComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) { }
-
+  pageTitle: string="Customer Registration Form";
+  
   model:any={};
+  showAlertMessage:boolean=false;
+  
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
   }
@@ -34,6 +37,7 @@ export class AddCustomerComponent implements OnInit {
           },
           error=>{
             alert("Unable to add Customer");
+            this.showAlertMessage=true;
           });      
   }
 

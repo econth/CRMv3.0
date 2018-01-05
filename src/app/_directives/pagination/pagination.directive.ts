@@ -36,10 +36,10 @@ export class PaginationDirective implements ControlValueAccessor,OnInit{
 
     doPaging() {
       this.pageList = [];
-      var i:number,count:number;
+      let i:number,count:number;
       this.seletedPage = this.currentpage;
-      var remaining = this.totalItems % this.itemsPerPage;
-      var totalSize =((this.totalItems-remaining) / this.itemsPerPage)+(remaining ===0 ? 0 : 1);
+      let remaining = this.totalItems % this.itemsPerPage;
+      let totalSize =((this.totalItems-remaining) / this.itemsPerPage)+(remaining ===0 ? 0 : 1);
       for (i = (this.currentpage), count=0; i<= totalSize && count<this.pageSize; i++, count++) {
         this.pageList.push(i);
       }
@@ -86,8 +86,8 @@ export class PaginationDirective implements ControlValueAccessor,OnInit{
     }
 
     lastPage(){
-      var totalPages = (this.totalItems / this.itemsPerPage);
-      var lastPage = (totalPages) - (totalPages % this.itemsPerPage === 0 ? this.itemsPerPage : totalPages % this.itemsPerPage)+1;
+      let remaining = this.totalItems % this.itemsPerPage;
+      let lastPage =((this.totalItems-remaining) / this.itemsPerPage)+(remaining ===0 ? 0 : 1);
       this.currentpage = lastPage;
       this.pageChangedNgModel.viewToModelUpdate(lastPage);
       this.pageChageListner();

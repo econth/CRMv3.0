@@ -10,3 +10,7 @@ nav.sidebar{
 .modal-dialog{
     margin-top: 100px;
 }
+
+.dropdown-menu{
+    padding-right: 36px;
+}

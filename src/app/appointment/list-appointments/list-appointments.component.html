@@ -6,26 +6,36 @@
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      2 Appointments Found.
+      {{appointments.length}} Appointments Found.
     </div>
     <div class="form-group d-flex flex-row align-items-center justify-content-end">
       <label for="filterAppointment" class="mr-auto search-label">Search Appointments by </label> 
       <input type="text" name="filterAppointment" [(ngModel)]="searchText" class="form-control search-width"/>
     </div>
-    <div class="table-responsive">
+    <div *ngIf="appointments.length>0" class="table-responsive">
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
-            <th>SI No.</th>
-            <th>Appointment Date</th>
-            <th>Time</th>
-            <th>Mobile Number</th>
-            <th>E-Mail</th>
+            <th (click)="sort('id')">SI No. 
+              <i class="fa fa-lg" *ngIf="key =='id'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+            </th>
+            <th (click)="sort('doa')">Appointment Date 
+              <i class="fa fa-lg" *ngIf="key =='doa'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+            </th>
+            <th (click)="sort('time')">Time 
+              <i class="fa fa-lg" *ngIf="key =='time'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+            </th>
+            <th (click)="sort('mobilenumber')">Mobile Number 
+              <i class="fa fa-lg" *ngIf="key =='mobilenumber'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+            </th>
+            <th (click)="sort('email')">E-Mail 
+              <i class="fa fa-lg" *ngIf="key =='email'" [ngClass]="{'fa-caret-up':reverse,'fa-caret-down':!reverse}"></i>
+            </th>
             <th></th>	
           </tr>
         </thead>
         <tbody> 
-          <tr *ngFor="let appointment of appointments | searchFilter: searchText">
+          <tr *ngFor="let appointment of appointments | searchFilter: searchText | paginate : itemsPage : currentPage | orderBy : key : reverse">
             <td>{{appointment.id}}</td>
             <td>{{appointment.doa}}</td>
             <td>{{appointment.time}}</td>
@@ -37,19 +47,7 @@
           </tr>
        </tbody>
       </table>
-    </div>
-    <div>
-      <ul class="pagination justify-content-end">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
+      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true" [itemsPerPage]="itemsPerPage"></econth-pagination>
     </div>
   </div>
 </div>

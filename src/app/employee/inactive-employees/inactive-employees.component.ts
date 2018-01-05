@@ -9,12 +9,26 @@ import { EmployeeService } from '../../_service/employee.service';
 })
 export class InactiveEmployeesComponent implements OnInit {
 
+
+  public currentPage:number=1;
+  public totalItems:number= 1;
+  public maxSize:number=3;
+  public itemsPage:number=1;
+  public key: string = 'id'; 
+  public reverse: boolean = false;
+  public itemsPerPage:number=this.itemsPage;
+
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
   }
 
   model:any={};
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   makeAsActiveEmployee(){
     this.employeeService.updateEmployee(this.model)

@@ -9,8 +9,10 @@ import { EmployeeService } from '../../_service/employee.service';
 })
 export class AddEmployeeComponent implements OnInit {
 
+  pageTitle: string="Employee Registration Form";
+
   model:any={};
-  showAlertMessage=false;
+  showAlertMessage:boolean=false;
 
   constructor(private employeeService: EmployeeService) { }
 
@@ -47,10 +49,14 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   generateUsername(){
-    this.model.username="Emp_600811";
+    this.employeeService.generateEmployeeID()
+    .subscribe(
+      data=>{
+        alert("Employee has been added");
+      },
+      error=>{
+        this.model.username="Emp_600811";
+        
+      });   
   }
-
-
-  
-
 }

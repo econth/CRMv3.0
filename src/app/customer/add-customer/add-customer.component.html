@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <h1> Customer Registration Form</h1>
+  <h1> {{pageTitle}}</h1>
   <hr/>
   <form>
     <div class="d-flex flex-column">
-      <div class="d-none d-md-flex alert alert-success alert-dismissible fade show" role="alert">
+      <div *ngIf="showAlertMessage" class="d-none d-md-flex alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -11,25 +11,25 @@
       </div>
       <div class="form-group">
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" [(ngModel)]="model.firstname" placeholder="First Name" class="form-control">
+        <input type="text" name="firstname" [(ngModel)]="model.firstname" id="firstname" placeholder="First Name" class="form-control" aria-describedby="firstnameHelp">
       </div>
       <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" [(ngModel)]="model.lastname" placeholder="Last Name" class="form-control">
+        <input type="text" name="lastname" [(ngModel)]="model.lastname" id="lastname" placeholder="Last Name" class="form-control" aria-describedby="lastnameHelp">
       </div>
       <div class="form-group">
         <label for="dob">Date of Birth</label>
-        <datetime  name="dob" [(ngModel)]="model.dob" [timepicker]="false" [datepicker]="datepickerOpts" id="dob" aria-describedby="dateOfBirthHelp"></datetime>
+        <datetime  name="dob" [(ngModel)]="model.dob" id="dob" [timepicker]="false" [datepicker]="datepickerOpts"  aria-describedby="dateOfBirthHelp"></datetime>
       </div>		
       <div class="form-group">
         <label for="mobilenumber">Mobile Number</label>
-        <input type="text" name="mobilenumber" [(ngModel)]="model.mobilenumber" placeholder="Mobile Number" class="form-control">
+        <input type="text" name="mobilenumber" [(ngModel)]="model.mobilenumber" id="mobilenumber" placeholder="Mobile Number" class="form-control" aria-describedby="mobileNumberHelp">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" name="email" [(ngModel)]="model.email" placeholder="Email Address" class="form-control">
+        <input type="text" name="email" [(ngModel)]="model.email" id="email" placeholder="Email Address" class="form-control" aria-describedby="emailHelp">
       </div>
-      <div class="d-md-none d-xs-flex alert alert-success alert-dismissible fade show" role="alert">
+      <div *ngIf="showAlertMessage" class="d-md-none d-xs-flex alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -37,7 +37,7 @@
       </div>
       <div class="flex-row">
         <button type="button" class="btn btn-md btn-info" (click)="addCustomer()">Add Customer</button>	
-        <button type="button" class="btn btn-md btn-info" (click)="reset()">Reset</button>
+        <button type="button" class="btn btn-md btn-danger" (click)="reset()">Reset</button>
       </div>
     </div>
   </form>

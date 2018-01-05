@@ -7,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAppointmentComponent implements OnInit {
 
+  pageTitle: string="Book Appointment";
   model:any={};
 
   constructor() { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   date: Date = new Date();
   
   datepickerOpts = {
     startDate   : new Date(),
-    endDate     : new Date(2018, 0, 1),
+    endDate     : new Date(2019, 0, 1),
     todayBtn: 'linked',
     todayHighlight: true,
     format: 'dd/mm/yyyy',

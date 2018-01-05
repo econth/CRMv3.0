@@ -10,9 +10,24 @@ import { EmployeeService } from '../../_service/employee.service';
 export class SearchEmployeeComponent implements OnInit {
 
   model:any={};
-  employees:any;
+  employees:any=[];
 
-  constructor(private employeeService:EmployeeService) { }
+  public pageTitle: string= "Search Employee";
+  public showAlertMessage: boolean= false;
+  public currentPage:number=1;
+  public totalItems:number= 5;
+  public maxSize:number=2;
+  public itemsPage:number=2;
+  public key: string = 'id'; 
+  public reverse: boolean = false;
+  public itemsPerPage:number=this.itemsPage;
+  
+  constructor(private employeeService: EmployeeService) { }
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   ngOnInit() {
     this.getAllEmployees();
@@ -37,6 +52,7 @@ export class SearchEmployeeComponent implements OnInit {
           },
           error=>{
             alert("Unable to retrieve any employee");
+            this.showAlertMessage=true;
           });
   }
 

@@ -14,6 +14,10 @@ export class EmployeeService{
         return this.http.post('',employee).map((response: Response) => response.json());
     }
 
+    generateEmployeeID(){
+        return this.http.get('').map((response: Response)=>response.json());
+    }
+
     getAllEmployees(){
         return this.http.get('../assets/data/employees.json').map((response: Response)=>response.json());
     }

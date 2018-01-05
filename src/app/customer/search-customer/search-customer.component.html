@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <h1> Search Customer</h1>
+  <h1> {{pageTitle}}</h1>
   <hr/>
   <form>
     <div class="d-flex flex-column">
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <div *ngIf="showAlertMessage" class="alert alert-success alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
         <input type="text" name="customername" [(ngModel)]="searchText" placeholder="Enter the Customer first name or last name" class="form-control mr-3">  
         <button type="button" class="btn btn-md btn-info" (click)="searchCustomer()">Search</button>	
       </div>
-      <div *ngIf="customers.length">
+      <div *ngIf="customers.length>0">
         <div class="form-group">
           <h3> Search results</h3>
         </div>
@@ -56,29 +56,29 @@
                 </td>
               </tr>
             </tbody>
-            <div class="modal" id="softDeleteCustomerModal" tabindex="-1" role="dialog" aria-labelledby="softDeleteCustomerModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="softDeleteCustomerModalLabel">Soft Delete Customer</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure want to make the customer as inactive?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="softDeleteCustomer(customer)" >Make as inactive</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </table>
         </div>
+        <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true" [itemsPerPage]="itemsPerPage"></econth-pagination>
       </div>
-      <econth-pagination [(ngModel)]="currentPage" [totalItems]="totalItems" [maxSize]="maxSize" (pageChanged)="pageChanged($event)" name="pagination" [boundaryLinks]="true" [itemsPerPage]="itemsPerPage"></econth-pagination>
     </div>
   </form> 
+  <div class="modal" id="softDeleteCustomerModal" tabindex="-1" role="dialog" aria-labelledby="softDeleteCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="softDeleteCustomerModalLabel">Soft Delete Customer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure want to make the customer as inactive?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="softDeleteCustomer(customer)" >Make as inactive</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

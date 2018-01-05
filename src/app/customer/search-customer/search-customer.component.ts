@@ -11,7 +11,9 @@ export class SearchCustomerComponent implements OnInit {
 
   model:any={};
   customers:any=[];
-
+  
+  public pageTitle: string= "Search Customer";
+  public showAlertMessage: boolean= false;
   public currentPage:number=1;
   public totalItems:number= 100;
   public maxSize:number=3;
@@ -54,6 +56,7 @@ export class SearchCustomerComponent implements OnInit {
           },
           error=>{
             alert("Unable to retrieve any customer");
+            this.showAlertMessage=true;
           });
   }
 
