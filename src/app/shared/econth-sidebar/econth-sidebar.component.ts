@@ -8,6 +8,9 @@ import { AuthenticationService } from '../../_service/authentication.service';
 })
 export class EconthSidebarComponent implements OnInit {
 
+  public open: boolean = this.open==true ? true : false;
+  public open1:boolean = this.open==true ? true : false;
+
   constructor( private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
@@ -15,6 +18,21 @@ export class EconthSidebarComponent implements OnInit {
 
   logout(){
     this.authenticationService.logout();
+  }
+
+  toggleCustomerDropdown(){
+    this.open=!this.open;
+    if(this.open1==true){
+      this.open1=!this.open1;
+    }
+  }
+
+  toggleEmployeeDropdown(){
+    if(this.open==true){
+      this.open=!this.open;
+    }
+    this.open1=!this.open1;
+
   }
 
 }

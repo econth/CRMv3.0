@@ -1,4 +1,4 @@
-<nav class="d-none d-md-block bg-light sidebar">
+<div class="sidebar">
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
       <a class="nav-link" routerLink="dashboard">
@@ -17,10 +17,10 @@
       </a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="customerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" (click)="toggleCustomerDropdown()" id="customerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-gift fa-lg" aria-hidden="true"></i> Customers
         <span class="pull-right">
-          <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
+          <i class="fa fa-lg" [ngClass]="{'fa-angle-down':open,'fa-angle-right':!open}" aria-hidden="true"></i>
         </span>
       </a>
       <div class="dropdown-menu" aria-labelledby="customerDropdownMenu">
@@ -33,11 +33,11 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="employeeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" (click)="toggleEmployeeDropdown()" id="employeeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-globe fa-lg" aria-hidden="true"></i> Employees
         <span class="pull-right">
-          <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i>
-        </span>
+          <i class="fa fa-lg" [ngClass]="{'fa-angle-down':open1,'fa-angle-right':!open1}" aria-hidden="true"></i>
+        </span> 
       </a>
       <div class="dropdown-menu" aria-labelledby="employeeDropdownMenu">
         <a class="dropdown-item" routerLink="employee/add-employee">
@@ -69,23 +69,4 @@
       </a>
     </li>
   </ul>
-</nav>
-<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Signout</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Are you sure want to logout?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="logout()" >Signout</button>
-      </div>
-    </div>
-  </div>
 </div>
